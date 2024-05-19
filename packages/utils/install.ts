@@ -9,7 +9,7 @@ export function makeInstaller(components: Plugin[]) {
       app.use(c);
     });
 
-  return install;
+  return install as Plugin;
 }
 
 export const withInstall = <T>(component: T) => {
