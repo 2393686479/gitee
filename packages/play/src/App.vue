@@ -2,7 +2,6 @@
 </script>
 
 <template>
-  <!-- <Q /> -->
   <er-button/>
 </template>
 
