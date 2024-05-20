@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <er-button/>
+  <er-button size="small">www</er-button>
 </template>
 
 <style scoped>
