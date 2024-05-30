@@ -15,13 +15,14 @@
       'is-loading': loading,
     }"
   >
-  <slot></slot>
+    <slot></slot>
   </component>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { type ButtonProps } from "./types";
+import type { ButtonProps, ButtonEmits, ButtonInstance } from "./types";
+import { throttle } from "lodash-es";
 defineOptions({ name: "ErButton" });
 
 const props = withDefaults(defineProps<ButtonProps>(), {
@@ -32,8 +33,14 @@ const props = withDefaults(defineProps<ButtonProps>(), {
 const slots = defineSlots();
 
 const _ref = ref<HTMLButtonElement>();
+
+const emits = defineEmits<ButtonEmits>();
+
+defineExpose<ButtonInstance>({
+  ref: _ref,
+});
 </script>
 
 <style scoped>
-@import './style.css';
+@import "./style.css";
 </style>
