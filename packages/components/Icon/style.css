@@ -1,0 +1,11 @@
+.er-icon {
+    display: inline-block;
+    font-size: 1.5em;
+    line-height: 1;
+    vertical-align: middle;
+  }
+  @each $val in primary, info, success, warning, danger {
+    .er-icon--$(val) {
+      --er-icon-color: var(--er-color-$(val));
+    }
+  }

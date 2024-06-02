@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "pnpm --filter @toy-element/play dev",
+    "story": "pnpm --filter @toy-element/play storybook",
     "docs:dev": "pnpm --filter @toy-element/docs dev",
     "docs:build": "pnpm --filter @toy-element/docs build",
     "test": "pnpm --filter @toy-element/components test"
@@ -34,6 +35,9 @@
     "toy-element": "workspace:*",
     "@toy-element/hooks": "workspace:*",
     "@toy-element/utils": "workspace:*",
-    "@toy-element/theme": "workspace:*"
+    "@toy-element/theme": "workspace:*",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/vue-fontawesome": "^3.0.8"
   }
 }
