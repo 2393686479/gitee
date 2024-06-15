@@ -1,8 +1,14 @@
-<script setup lang="ts">
+<script setup>
+import { onMounted, ref } from "vue";
+const b = ref();
+onMounted( () => {
+  console.log(b.value);
+  console.log(b.value?.ref);
+});
 </script>
 
 <template>
-  <er-button size="small">www</er-button>
+  <er-button size="small" ref="b">www</er-button>
 </template>
 
 <style scoped>
