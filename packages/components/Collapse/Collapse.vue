@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts" setup>
-import { provide, ref, watch } from "vue";
+import { provide, ref, watch, watchEffect } from "vue";
 import type { CollapseProps, CollapseEmits, CollapseItemName } from "./type";
 import { COLLAPSE_CTX_KEY } from "./contants";
 
@@ -17,16 +17,17 @@ const props = defineProps<CollapseProps>();
 const emits = defineEmits<CollapseEmits>();
 const activeNames = ref(props.modelValue);
 
-if (props.accordion && activeNames.value.length > 1) {
-  console.warn("one");
-}
+watchEffect(() => {
+  if (props.accordion && activeNames.value.length > 1) {
+    console.warn("one");
+  }
+});
 
 function handleItemClick(item: CollapseItemName) {
   let _activeNames = [...activeNames.value];
 
   if (props.accordion) {
     _activeNames = [_activeNames[0] === item ? "" : item];
-    console.log(_activeNames)
     updateActiveNames(_activeNames);
     return;
   }
@@ -58,5 +59,5 @@ provide(COLLAPSE_CTX_KEY, {
 </script>
 
 <style scoped>
-@import './style.css'
+@import "./style.css";
 </style>

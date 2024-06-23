@@ -1,15 +1,17 @@
 <script setup>
 import { onMounted, reactive, ref } from "vue";
 const b = ref();
-onMounted(() => {
-  console.log(b.value);
-  console.log(b.value?.ref);
-});
+// onMounted(() => {
+//   console.log(b.value);
+//   console.log(b.value?.ref);
+// });
 
 const args = reactive(({
   accordion: true,
   modelValue: ["a"]
 }))
+
+console.log(args.accordion)
 </script>
 
 <template>
